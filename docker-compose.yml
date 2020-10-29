@@ -1,6 +1,13 @@
 version: "3.8"
+
+networks:
+  hostnet:
+    external: true
+    name: host
+
 services:
   monitor:
     build: .
     container_name: energy_monitor
-    
+    networks:
+      hostnet: {}
